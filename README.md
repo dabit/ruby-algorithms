@@ -1,2 +1,6 @@
 # ruby-algorithms
-Just a bunch of algorithms written in Ruby
+
+My implementation of [these basic algorithms](http://bigocheatsheet.com) in Ruby.
+
+Feel free to make comments, Pull Requests, etc...
+
