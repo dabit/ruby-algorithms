@@ -20,13 +20,17 @@ class Graph
 
   def depth_first_search(i = 0)
     label = LABEL[i]
-    puts "Visited #{label}"
-    visited << label
-    graph[i].each_with_index do |n, ii|
-      if n == 1 && !visited.include?(LABEL[ii])
-        depth_first_search(ii)
+    visit label
+    graph[i].each_with_index do |n, j|
+      if n == 1 && !visited.include?(LABEL[j])
+        depth_first_search(j)
       end
     end
+  end
+
+  def visit(label)
+    puts "Visited #{label}"
+    visited << label
   end
 end
 

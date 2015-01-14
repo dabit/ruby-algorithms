@@ -20,15 +20,19 @@ class Graph
 
   def breadth_first_search(i = 0)
     label = LABEL[i]
-    graph[i].each_with_index do |n, ii|
-      #puts "#{i}, #{ii}: #{n}"
-      if (i == ii || n == 1) && !visited.include?(LABEL[ii])
-        visited << LABEL[ii]
-        puts "Visited #{LABEL[ii]}"
+    graph[i].each_with_index do |n, j|
+      #puts "#{i}, #{j}: #{n}"
+      if (i == j || n == 1) && !visited.include?(LABEL[j])
+        visit LABEL[j]
       end
     end
     i += 1
     breadth_first_search(i) if graph[i + 1]
+  end
+
+  def visit(label)
+    visited << label
+    puts "Visited #{label}"
   end
 end
 
